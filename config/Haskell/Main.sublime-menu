@@ -8,20 +8,52 @@
             "id": "SublimeREPL",
             "children":
             [
-                {"command": "repl_open", 
-                 "caption": "Haskell",
-                 "id": "repl_haskell",
-                 "mnemonic": "h",
-                 "args": {
-                    "type": "sublime_haskell",
-                    "encoding": "utf8",
-                    "cmd": ["ghci"],
-                    "cwd": "$file_path",
-                    "external_id": "haskell",
-                    "syntax": "Packages/Haskell/Haskell.tmLanguage"
-                    }
+                {"caption": "Haskell",
+                "id": "Haskell",
+
+                "children":[
+                    {"command": "repl_open", 
+                     "caption": "ghci",
+                     "id": "repl_haskell",
+                     "mnemonic": "h",
+                     "args": {
+                        "type": "sublime_haskell",
+                        "encoding": "utf8",
+                        "cmd": ["ghci"],
+                        "cwd": "$file_path",
+                        "external_id": "haskell",
+                        "syntax": "Packages/SublimeHaskell/Syntaxes/HaskellRepl.tmLanguage"
+                        }
+                    },
+                    {"command": "repl_open",
+                     "caption": "ghci — load current file",
+                     "id": "repl_haskell_file",
+                     "mnemonic": "i",
+                     "args": {
+                        "type": "sublime_haskell",
+                        "encoding": "utf8",
+                        "cmd": ["ghci", "$file"],
+                        "cwd": "$file_path",
+                        "external_id": "haskell",
+                        "syntax": "Packages/SublimeHaskell/Syntaxes/HaskellRepl.tmLanguage"
+                        }
+                    },
+                    {"command": "repl_open",
+                     "caption": "cabal repl",
+                     "id": "repl_haskell_project",
+                     "mnemonic": "p",
+                     "args": {
+                        "type": "sublime_haskell",
+                        "encoding": "utf8",
+                        "cmd": ["cabal", "repl"],
+                        "cwd": "$file_path",
+                        "opts": ["locate_project"],
+                        "external_id": "haskell",
+                        "syntax": "Packages/SublimeHaskell/Syntaxes/HaskellRepl.tmLanguage"
+                     }
+                    }]
                 }
-            ]   
+            ]
         }]
     }
 ]

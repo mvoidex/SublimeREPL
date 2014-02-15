@@ -1,9 +1,25 @@
 [
     {
-        "caption": "SublimeREPL: Haskell",
+        "caption": "SublimeREPL: Haskell: ghci",
         "command": "run_existing_window_command", "args":
         {
             "id": "repl_haskell",
+            "file": "config/Haskell/Main.sublime-menu"
+        }
+    },
+    {
+        "caption": "SublimeREPL: Haskell: ghci — load current file",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_haskell_file",
+            "file": "config/Haskell/Main.sublime-menu"
+        }
+    },
+    {
+        "caption": "SublimeREPL: Haskell: cabal repl",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_haskell_project",
             "file": "config/Haskell/Main.sublime-menu"
         }
     }
